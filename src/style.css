@@ -1,0 +1,160 @@
+/*Fonts Used*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:400,400i');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;800&family=Questrial&family=Raleway:wght@100;200;300;400&display=swap');
+@font-face {
+  font-family: 'Samsung Sharp Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Samsung Sharp Sans Regular'), url('../fonts/samsung/samsungsharpsans.woff') format('woff');
+  }
+  @font-face {
+  font-family: 'Samsung Sharp Sans Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Samsung Sharp Sans Medium'), url('../fonts/samsung/samsungsharpsans-medium.woff') format('woff');
+  }
+  @font-face {
+  font-family: 'Samsung Sharp Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Samsung Sharp Sans Bold'), url('../fonts/samsung/samsungsharpsans-bold.woff') format('woff');
+  }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; image-rendering: -webkit-optimize-contrast;}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline; -webkit-text-size-adjust: 100%;}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; cursor: pointer; }
+input:not([type='radio']):not([type='checkbox']), textarea, select{-webkit-appearance: none;}
+form, label {-webkit-text-size-adjust: 100%;}
+mark {background-color: transparent;color:inherit;}
+/* end reset */
+
+@layer base {
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer components {
+
+  .wrapper {
+    @apply w-[100%] block text-center max-w-[1200px] mx-[auto] my-[0];
+  }
+
+  .bnr_con {
+    @apply relative;
+  } 
+
+  .slider {
+    @apply w-[1920px] mx-[auto] my-[0] ml-[-352px] relative block ;
+  }
+
+  .rslides {
+    @apply hidden;
+  }
+
+  .bnr_info {
+    @apply absolute left-[0] right-[0] bottom-[96px] max-w-[1080px] w-[100%] mx-[auto] my-[0] p-[30px] bg-whitebg/[.9] z-20;
+  }
+
+  .bnr_info h2{
+    @apply font-Playfair text-headingtexts text-bluebg mb-[20px] font-bold;
+  }
+
+  .bnr_info p{
+    @apply font-Questrial text-normaltext leading-[24px];
+  }
+
+  .mid_box_con{
+    @apply flex flex-wrap text-center justify-around mx-[auto] py-[123px];
+  }
+
+  [class^="mid_boxes"]{
+    @apply items-center mx-[20px] my-[10px];
+  }
+
+
+  [class^="mid_boxes"] img {
+    @apply block my-[0] mx-[auto];
+  }
+
+  [class^="mid_boxes"] div{
+    @apply p-[30px] px-[17px] w-[100%] max-w-[327px] shadow-lg;
+  }
+
+  [class^="mid_boxes"] h2{
+    @apply font-SamsunBuang text-[28px] mb-[30px];
+  }
+
+  [class^="mid_boxes"] h2 span{
+    @apply block;
+  }
+
+  [class^="mid_boxes"] p{
+    @apply font-Raleway text-[20px] mb-[30px];
+  }
+
+  .mid_box_con a {
+    @apply font-bold py-[20px] px-[30px] rounded-full bg-bluebg w-[100%] text-whitebg block text-center max-w-[200px] mx-[auto] my-[0] hover:bg-blackbg hover:text-whitebg font-SamsunBuang text-[16px];
+  }
+
+  .bottom1 {
+    @apply min-h-[636px] bg-bluebg;
+  }
+
+  /* responsive */
+
+  .slider .box_skitter {
+    @apply responsivestart:hidden;
+  }
+
+  .slider {
+    @apply responsivestart:ml-[-29%] responsivestart:w-[150%];
+  }
+
+  .mid_box_con{
+    @apply responsivestart:p-[30px];
+  }
+
+  .rslides {
+    @apply responsivestart:block;
+  }
+
+  .bnr_info {
+    @apply responsivestart:relative responsivestart:bottom-0 responsivestart:border-b-2 responsivestart:border-solid responsivestart:border-bluebg;
+  }
+
+  .bnr_info h2{
+    @apply responsivestart:text-[32px];
+  }
+
+  [class^="mid_boxes"] {
+    @apply mt-[0] mb-[20px] mx-[auto];
+  }
+
+  [class^="mid_boxes"] h2{
+    @apply responsivestart:text-[23px] leading-[30px] mb-[20px];
+  }
+
+  [class^="mid_boxes"] p{
+    @apply responsivestart:text-[18px] leading-[30px];
+  }
+
+}
